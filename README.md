@@ -14,7 +14,8 @@ Spring Boot 2.6.7
 - 数学と理科どちらかの点数が80点以上である場合に「追試です」を返却
 - 数学と理科両方の点数が80点未満である場合に「不合格です」を返却
 - 点数が0点未満または101点以上である場合に例外処理として「点数は0から100までの数値を入力してください」を返却
-<img width="577" alt="スクリーンショット 2022-06-22 17 48 50" src="https://user-images.githubusercontent.com/103230014/174989062-a19b2b2b-f50c-4e3f-b35d-82d6dc2ae93a.png">  
+| <img width="577" alt="スクリーンショット 2022-06-22 17 48 50" src="https://user-images.githubusercontent.com/103230014/174989062-a19b2b2b-f50c-4e3f-b35d-82d6dc2ae93a.png"> |
+
 
 ## テストについて
 - ExaminationServiceTest.javaでテストを実装
