@@ -50,56 +50,46 @@ class ExaminationServiceTest {
 		assertThat(actual).isEqualTo("不合格です");
 	}
 
-//	@Test
-//	void 数学の点数と理科の点数が101点の場合に例外処理されること() {
-//		try {
-//			examinationService.passOrFail(101, 101);
-//			fail();
-//		} catch (Exception e) {
-//			assertThat(e.getMessage()).isEqualTo("点数は0から100までの数値を入力してください");
-//		}
-//	}
-
 	@Test
 	void 数学の点数と理科の点数が101点の場合に例外処理されること() {
 		assertThatThrownBy(() -> {
 			examinationService.passOrFail(101, 101);
-		}).isInstanceOf(Exception.class).hasMessageContaining("点数は0から100までの数値を入力してください");
+		}).isInstanceOf(Exception.class).hasMessage("点数は0から100までの数値を入力してください");
 	}
 
 	@Test
 	void 数学の点数が101点で理科の点数が100点の場合に例外処理されること() {
 		assertThatThrownBy(() -> {
 			examinationService.passOrFail(101, 100);
-		}).isInstanceOf(Exception.class).hasMessageContaining("点数は0から100までの数値を入力してください");
+		}).isInstanceOf(Exception.class).hasMessage("点数は0から100までの数値を入力してください");
 	}
 
 	@Test
 	void 数学の点数が100点で理科の点数が101点の場合に例外処理されること() {
 		assertThatThrownBy(() -> {
 			examinationService.passOrFail(100, 101);
-		}).isInstanceOf(Exception.class).hasMessageContaining("点数は0から100までの数値を入力してください");
+		}).isInstanceOf(Exception.class).hasMessage("点数は0から100までの数値を入力してください");
 	}
 
 	@Test
 	void 数学の点数と理科の点数がー1点の場合に例外処理されること() {
 		assertThatThrownBy(() -> {
 			examinationService.passOrFail(-1, -1);
-		}).isInstanceOf(Exception.class).hasMessageContaining("点数は0から100までの数値を入力してください");
+		}).isInstanceOf(Exception.class).hasMessage("点数は0から100までの数値を入力してください");
 	}
 
 	@Test
 	void 数学の点数がー1点で理科の点数が0点の場合に例外処理されること() {
 		assertThatThrownBy(() -> {
 			examinationService.passOrFail(-1, 0);
-		}).isInstanceOf(Exception.class).hasMessageContaining("点数は0から100までの数値を入力してください");
+		}).isInstanceOf(Exception.class).hasMessage("点数は0から100までの数値を入力してください");
 	}
 
 	@Test
 	void 数学の点数が0点で理科の点数がー1点の場合に例外処理されること() {
 		assertThatThrownBy(() -> {
 			examinationService.passOrFail(0, -1);
-		}).isInstanceOf(Exception.class).hasMessageContaining("点数は0から100までの数値を入力してください");
+		}).isInstanceOf(Exception.class).hasMessage("点数は0から100までの数値を入力してください");
 	}
 
 }
